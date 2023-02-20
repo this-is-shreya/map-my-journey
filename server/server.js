@@ -34,5 +34,5 @@ app.use("/api/user",cors(corsOptionsDelegate),require("./routes/user"))
 
 const PORT = process.env.PORT
 app.listen(PORT,()=>{
-    console.log("Listening at "+PORT)
+    console.log("Listening at port "+PORT)
 })
