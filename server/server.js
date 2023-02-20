@@ -14,7 +14,8 @@ mongoose.connect(process.env.DATABASE).then(()=>{
 })
 
 const cors = require("cors")
-const whitelist = ["http://127.0.0.1:3000", "localhost", "http://localhost:3000"];
+const whitelist = ["http://127.0.0.1:3000", "localhost", "http://localhost:3000",
+"https://map-my-journey.vercel.app"];
 
 var corsOptionsDelegate = function (req, callback) {
   var corsOptions = { origin: true};
