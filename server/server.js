@@ -9,9 +9,7 @@ const path = require("path")
 dotenv.config({path:path.join(__dirname,"config.env")})
 
 const mongoose = require("mongoose")
-mongoose.connect(process.env.DATABASE).then(()=>{
-    console.log("Database connected");
-})
+
 
 const cors = require("cors")
 const whitelist = ["http://127.0.0.1:3000", "localhost", "http://localhost:3000",
@@ -34,6 +32,10 @@ app.use("/api/user",cors(corsOptionsDelegate),require("./routes/user"))
 
 
 const PORT = process.env.PORT
-app.listen(PORT,()=>{
+mongoose.connect(process.env.DATABASE).then(()=>{
+  console.log("Database connected");
+  app.listen(PORT,()=>{
     console.log("Listening at port "+PORT)
 })
+})
+
