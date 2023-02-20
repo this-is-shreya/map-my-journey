@@ -35,7 +35,7 @@ const PORT = process.env.PORT
 mongoose.connect(process.env.DATABASE).then(()=>{
   console.log("Database connected");
   app.listen(PORT,()=>{
-    console.log("Listening at port "+PORT)
+    console.log("Listening at port number "+PORT)
 })
 })
 
