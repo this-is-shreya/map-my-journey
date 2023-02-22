@@ -27,7 +27,7 @@ const SignUp =()=> {
       password:e.target[3].value
     }).then(res=>{
       
-      console.log(res.data.message);
+      // console.log(res.data.message);
       if(res.status === 200){
         const token = `Bearer ${res.data.token}`
         setCookie("jwt_token",token,{ path: '/' })

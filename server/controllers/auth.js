@@ -71,7 +71,7 @@ catch(error){
 module.exports.signUp = async(req,res)=>{
 
 try{
-    console.log(req.body);
+    // console.log(req.body);
     const user = await userSchema.find({email:req.body.email})
     if(user.length != 0){
         return res.status(403).json({

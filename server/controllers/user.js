@@ -26,7 +26,7 @@ module.exports.addEvent = async(req,res)=>{
         if(req.body.new_cat != ""){
             score += 1
         }
-        if(req.body.achieve_cat == "biggest"){
+        if(req.body.achieve_cat == "biggest achievement"){
             score += 2
         }
         if(req.body.achieve_cat != ""){
@@ -110,7 +110,7 @@ module.exports.getMaps = async(req,res)=>{
                     diff.push([item.diff_cat,item.diff_d])
                 }
                 if(item.achieve_cat.length>0 && item.achieve_cat[0] != ''){
-                    console.log(item.achieve_cat[0])
+                    // console.log(item.achieve_cat[0])
                     achieve.push([item.achieve_cat,item.achieve_d])
                 }
             }
@@ -154,7 +154,7 @@ module.exports.modifyBadge = async(req,res)=>{
             }
         })
     }
-    else if(data.overall_score >= 100 & data.achiever_badge != true){
+    else if(data.overall_score >= 50 & data.achiever_badge != true){
    
     
         await userSchema.findByIdAndUpdate(req.user._id,{
@@ -162,7 +162,15 @@ module.exports.modifyBadge = async(req,res)=>{
                 achiever_badge : true
             }
         })
-       
+    }
+        else if(data.overall_score >= 100 & data.perseverance_badge != true){
+   
+    
+            await userSchema.findByIdAndUpdate(req.user._id,{
+                $set:{
+                    perseverance_badge : true
+                }
+            })
     
 }
 return res.status(200).json({
@@ -219,7 +227,7 @@ module.exports.updateEvent = async(req,res)=>{
         if(req.body.new_cat != ""){
             score += 1
         }
-        if(req.body.achieve_cat == "biggest"){
+        if(req.body.achieve_cat == "biggest achievement"){
             score += 2
         }
         if(req.body.achieve_cat != ""){
@@ -268,6 +276,22 @@ module.exports.deleteEvent = async(req,res)=>{
             message:"deleted successfully"
          })
         
+    }
+    catch(error){
+        return res.status(500).json({
+            success:false,
+            message:"Internal server error "+error,
+            data:null
+        })
+    }
+}
+module.exports.deleteAccount = async(req,res)=>{
+    try{
+        await userSchema.findByIdAndDelete(req.user._id)
+        return res.status(200).json({
+            sucess:true,
+            message:"deleted account successfully"
+        })
     }
     catch(error){
         return res.status(500).json({

@@ -192,7 +192,7 @@ const AddEvent = () => {
             {/* <option value="--">Pick a category</option> */}
             <option value="learnt skill">Learnt a new skill 🎯</option>
             <option value="explored">Explored 🔭</option>
-            <option value="tried">Just tried something different 🪁</option>
+            <option value="tried something">Just tried something different 🪁</option>
         </select><br />
         <Form.Label className="mt-3">Describe it</Form.Label><br/>
 
@@ -204,8 +204,8 @@ const AddEvent = () => {
         <Form.Label>Did you achieve something?</Form.Label><br/>
         <select onChange={(e)=>selectVal("a",e)} multiple>
             {/* <option value="--">Pick a category</option> */}
-            <option value="biggest">My biggest achievement so far 🏆</option>
-            <option value="appreciated">Got appreciated for my work 🌟</option>
+            <option value="biggest achievement">My biggest achievement so far 🏆</option>
+            <option value="got appreciated">Got appreciated for my work 🌟</option>
             <option value="worked on goal">Finally worked on my goal(s) 🏁</option>
             <option value="habit">Related to habit(s) 🤹🏻‍♀️</option>
             <option value="other">Other 🎖️</option>
@@ -222,7 +222,7 @@ const AddEvent = () => {
             {/* <option value="--">Pick a category</option> */}
             <option value="failed">Failed at a given task 😔</option>
             <option value="work load">High work load 😥</option>
-            <option value="job">Job-related 💼</option>
+            <option value="job-related">Job-related 💼</option>
             <option value="other">Other 🏃🏻</option>
         </select><br />
         <Form.Label className="mt-3">Describe it</Form.Label><br/>

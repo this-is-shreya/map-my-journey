@@ -91,7 +91,7 @@ return (
                 if(ele[1] != ''){
                   return(
                   <li key={index}>
-                    {ele[0]} - {ele[1]}
+                    {ele[0].join()} - {ele[1]}
                   </li>
                 )
               
@@ -99,7 +99,7 @@ return (
                 else{
                   return(
                   <li key={index}>
-                    {ele[0]}
+                    {ele[0].join()}
                   </li>
                 )
               
@@ -118,7 +118,7 @@ return (
                 if(ele[1] != ''){
                   return(
                   <li key={index}>
-                    {ele[0]} - {ele[1]}
+                    {ele[0].join()} - {ele[1]}
                   </li>
                 )
               
@@ -126,7 +126,7 @@ return (
                 else{
                   return(
                   <li key={index}>
-                    {ele[0]}
+                    {ele[0].join()}
                   </li>
                 )
               
@@ -145,7 +145,7 @@ return (
                 if(ele[1] != ''){
                   return(
                   <li key={index}>
-                    {ele[0]} - {ele[1]}
+                    {ele[0].join()} - {ele[1]}
                   </li>
                 )
               
@@ -153,7 +153,7 @@ return (
                 else{
                   return(
                   <li key={index}>
-                    {ele[0]}
+                    {ele[0].join()}
                   </li>
                 )
               

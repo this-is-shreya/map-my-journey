@@ -1,6 +1,6 @@
 const router = require("express").Router()
 const { getUser, addEvent, getEvents, getMaps, modifyBadge, 
-getSpecificEvent, updateEvent, deleteEvent} = require("../controllers/user")
+getSpecificEvent, updateEvent, deleteEvent, deleteAccount} = require("../controllers/user")
 const {checkAuth} = require("../middleware/auth")
 
 router.get("/get-user",checkAuth,getUser)
@@ -11,5 +11,6 @@ router.get("/get-maps/:date",checkAuth,getMaps)
 router.put("/modify-badge",checkAuth,modifyBadge)
 router.put("/update-event/:id",checkAuth,updateEvent)
 router.delete("/delete-event/:id",checkAuth,deleteEvent)
+router.delete("/delete-account",checkAuth,deleteAccount)
 
 module.exports = router
