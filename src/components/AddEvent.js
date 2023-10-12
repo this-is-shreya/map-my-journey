@@ -49,7 +49,7 @@ const AddEvent = () => {
     m = new_date.getMonth() + 1,
     d = new_date.getDate();
   y = new_date.getFullYear();
-  // console.log(y,m,d);
+  console.log(y, m, d);
 
   if (m < 10) {
     m = "0" + m;
@@ -136,11 +136,11 @@ const AddEvent = () => {
       y = mydate.getFullYear();
       // console.log(y,m,d);
 
-      if (mydate.getMonth() < 10) {
-        m = "0" + (mydate.getMonth() + 1);
+      if (m < 10) {
+        m = "0" + m;
       }
-      if (mydate.getDate() < 10) {
-        d = "0" + mydate.getDate();
+      if (d < 10) {
+        d = "0" + d;
       }
 
       axios
